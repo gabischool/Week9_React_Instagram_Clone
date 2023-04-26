@@ -29,9 +29,7 @@
 - [ ]  You will implement a callback to increase the "likes count" on posts, and hand it through props several levels down into a nested component.
 - [ ]  Look through the code before you start. There are a lot of files. Not all of them need code added to them. Start in the App.js file and read the instructions there.
 
----
 
-Your project should end up looking like [this](https://tm.gabischool.com/assets/themes/admin/images/TM/section_two/week_one/day_two/insta-clone.png)
 
 ### Task 3: Stretch Goals
 
