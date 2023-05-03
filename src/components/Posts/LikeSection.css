@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.like-section-wrapper i{
+    font-size: 20px;
+    margin-inline: 10px;
+    cursor: pointer;
+}
+.like-number{
+    padding: 4px;
+}
