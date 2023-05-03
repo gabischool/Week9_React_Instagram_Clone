@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.username{
+    margin-left:7px;
+}
+.timestamp{
+    font-size: 13px;
+    margin-left:40px;
+}
