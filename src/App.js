@@ -20,6 +20,8 @@ import React from 'react';
 
 
 import './App.css';
+import Posts from './components/Posts/Posts';
+import SearchBar from './components/SearchBar/SearchBar';
 
 const App = () => {
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
@@ -32,8 +34,10 @@ const App = () => {
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       {/* Soo jiido SearchBar iyo Posts components-ka hoos, si aad u muujiyo */}
-
-
+       
+       <SearchBar/>
+       <Posts/>
+        
       {/* Check the implementation of each component, to see what props they require, if any! */}
       {/* Fiiri sida loo sameeyo component-kasta, si aad u ogaato PROPS-ka ay u baahan tahay, hadayba jiraan props ay u baahanatahy! */}
     </div>
