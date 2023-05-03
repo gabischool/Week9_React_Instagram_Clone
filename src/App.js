@@ -10,31 +10,35 @@
   File-kasta fiiri si aad u ogaato PROPS-ka uu doonaayo.
 */
 
-import React from 'react';
+import React, { useState } from "react";
+import dummyData from "./dummy-data";
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
 // Soo jiido Posts iyo SearchBar components-ka
-
 
 // Import the dummyData
 // Soo jiido dummyData
 
-
-import './App.css';
+import "./App.css";
+import SearchBar from "./components/SearchBar/SearchBar";
+import Posts from "./components/Posts/Posts";
 
 const App = () => {
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
   // Waxaa sameysaa state la dhaho 'posts' si aad ugu keydisid wixii dummyData ka imaanaayo.
+  const [posts] = useState(dummyData);
 
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
   // Hadaa rabtid inaad "SearchBar" ka shaqeysiisid (Waa Stretch ogow), waxaan u baahanahay state kale oo aad ku keydisid qoraalka aad raadineysid.
 
   return (
-    <div className='App'>
+    <div className="App">
       {/* Add SearchBar and Posts here to render them */}
+      <SearchBar />
       {/* Soo jiido SearchBar iyo Posts components-ka hoos, si aad u muujiyo */}
-
-
       {/* Check the implementation of each component, to see what props they require, if any! */}
+
+      <Posts posts={posts} />
+
       {/* Fiiri sida loo sameeyo component-kasta, si aad u ogaato PROPS-ka ay u baahan tahay, hadayba jiraan props ay u baahanatahy! */}
     </div>
   );
