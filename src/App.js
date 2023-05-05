@@ -12,20 +12,38 @@
 
 import React, { useState } from "react";
 import dummyData from "./dummy-data";
+import SearchBar from "./components/SearchBar/SearchBar";
+import { Image, ListGroup } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
 // Soo jiido Posts iyo SearchBar components-ka
 
 // Import the dummyData
 // Soo jiido dummyData
 
-import "./App.css";
-import SearchBar from "./components/SearchBar/SearchBar";
 import Posts from "./components/Posts/Posts";
+
+import "./App.css";
+import { Alert } from "react-bootstrap";
 
 const App = () => {
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
   // Waxaa sameysaa state la dhaho 'posts' si aad ugu keydisid wixii dummyData ka imaanaayo.
   const [posts] = useState(dummyData);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filterData = dummyData.filter((item) => {
+    return item.username
+      .toLocaleLowerCase()
+      .includes(searchTerm.toLocaleLowerCase());
+  });
 
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
   // Hadaa rabtid inaad "SearchBar" ka shaqeysiisid (Waa Stretch ogow), waxaan u baahanahay state kale oo aad ku keydisid qoraalka aad raadineysid.
@@ -33,9 +51,33 @@ const App = () => {
   return (
     <div className="App">
       {/* Add SearchBar and Posts here to render them */}
-      <SearchBar />
+      <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
       {/* Soo jiido SearchBar iyo Posts components-ka hoos, si aad u muujiyo */}
       {/* Check the implementation of each component, to see what props they require, if any! */}
+
+      {searchTerm !== "" && filterData.length === 0 && (
+        <Alert variant="danger">Not Found any Match</Alert>
+      )}
+      {searchTerm !== "" &&
+        filterData.length > 0 &&
+        filterData.map((data) => (
+          <Container key={data.id}>
+            <Row className="mt-1 justify-content-center">
+              <Col>
+                <ListGroup variant="flush">
+                  <ListGroup.Item className="list-width">
+                    <Image
+                      src={data.thumbnailUrl}
+                      thumbnail
+                      className="img-thumbnail"
+                    />
+                    {data.username}
+                  </ListGroup.Item>
+                </ListGroup>
+              </Col>
+            </Row>
+          </Container>
+        ))}
 
       <Posts posts={posts} />
 

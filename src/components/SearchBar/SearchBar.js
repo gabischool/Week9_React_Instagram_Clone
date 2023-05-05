@@ -9,14 +9,20 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import "./SearchBar.css";
 
-const SearchBar = (props) => {
+const SearChBar = (props) => {
+  const { handleSearch, searchTerm } = props;
   return (
     <div className="search-bar-wrapper">
       <div className="social">
         <FontAwesomeIcon icon={faInstagram} />
       </div>
       <form className="search-form">
-        <input type="text" placeholder="Search" />
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
       </form>
       <div className="social-wrapper">
         <div className="social">
@@ -34,4 +40,4 @@ const SearchBar = (props) => {
   );
 };
 
-export default SearchBar;
+export default SearChBar;
