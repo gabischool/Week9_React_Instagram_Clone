@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart, faCircle, faCompass } from '@fortawesome/free-regular-svg-icons';
 import "./SearchBar.css";
+ 
 
 const SearchBar = (props) => {
+ 
   return (
     <div className="search-bar-wrapper">
       <div className="social">
@@ -15,6 +17,9 @@ const SearchBar = (props) => {
         <input
           type="text"
           placeholder="Search"
+          onChange={(e) => {
+            props.setSearchTerm(e.target.value);
+          }}
         />
       </form>
       <div className="social-wrapper">
