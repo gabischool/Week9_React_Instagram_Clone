@@ -17,6 +17,16 @@
 .App-intro {
   font-size: large;
 }
+.list-width {
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.img-thumbnail {
+  width: 50px;
+  height: 50px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
