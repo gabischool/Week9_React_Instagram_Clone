@@ -4,9 +4,11 @@ import LikeSection from './LikeSection';
 import PostHeader from './PostHeader';
 
 const Post = props => {
+  console.log(props)
   // 🔥 Make sure the parent of Post is passing the right props!
   // Hubi in component-ga ka sareysa midaan ay props sax ah soo direyso.
   const { post } = props;
+  // const {Comments} = useState(props.post.Comments)
   
   // This is the state for the likes, if you pass the state correctly, the heart button should increase the likes
   // State-kaan waxaa loogu tala galay 'likes', hadaa si sax ah loo soo diray, 'heart' button-ka wuu shaqeynayaa.
@@ -28,9 +30,10 @@ const Post = props => {
       />
       <div className='post-image-wrapper'>
         <img
+          src={post.imageUrl}
           alt='post thumbnail'
           className='post-image'
-          src={post.imageUrl}
+          
         />
       </div>
       {/* Is LikeSection getting all the props it needs to work correctly? Please send all the props it needs */}
@@ -41,7 +44,7 @@ const Post = props => {
       {/* Comments also wants its props! */}
       {/* Fadlan u dir props-ka ay 'Comments' component u baahantahay */}
       
-      <Comments />
+      <Comments post = {post.comments} />
     </div>
   );
 };
