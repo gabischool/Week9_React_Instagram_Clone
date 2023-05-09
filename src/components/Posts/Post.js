@@ -10,15 +10,17 @@ const Post = props => {
   
   // This is the state for the likes, if you pass the state correctly, the heart button should increase the likes
   // State-kaan waxaa loogu tala galay 'likes', hadaa si sax ah loo soo diray, 'heart' button-ka wuu shaqeynayaa.
-  
-    const [likes, setLikes] = useState(post.likes);
+  const likes  = props.post.likes;
+  const comment = props.post.comments;
+    // const [likes, setLikes] = useState(post.likes);
     
  // Function to increase the number of likes
   // Function-ka kor loogu qaado likes-ka
 
-  const incrementLikes = () => {
-    setLikes(likes + 1);
-  };
+  // const incrementLikes = () => {
+  //   setLikes(likes + 1);
+  // };
+
 
   return (
     <div className='post-border'>
@@ -36,13 +38,16 @@ const Post = props => {
       {/* Is LikeSection getting all the props it needs to work correctly? Please send all the props it needs */}
       {/* Component-ga 'LikeSection' ma heysataa wixii props ah oo ay u baahantahay? Hadaysan heysan, fadlan u dir */}
 
-      <LikeSection incrementLikes={incrementLikes} />
+      <LikeSection likes={likes} />
+
+      {/* Comments also wants its props! */}
+      {/* Fadlan u dir props-ka ay 'Comments' component u baahantahay */}
+      <Comments comment={comment}/>
 
       {/* Comments also wants its props! */}
       {/* Fadlan u dir props-ka ay 'Comments' component u baahantahay */}
       
-      <Comments />
-    </div>
+      </div>
   );
 };
 
