@@ -4,18 +4,15 @@ import React from 'react';
 const PostHeader = props => {
   // 🔥 Make sure the parent of PostHeader is passing the right props!
   // Hubi in component-ga ka sareysa midaan ay props sax ah soo direyso.
-  const { thumbnailUrl, username } = props;
-
+  const { thumbnailUrl, username,timeStamp} = props;
   return (
     <div className='post-header'>
       <div className='post-thumb-wrapper'>
-        <img
-          alt='post header'
-          className='post-thumb'
-          src={thumbnailUrl}
-        />
+        <img  alt='post header'  className='post-thumb'  src = {thumbnailUrl} />
+        
       </div>
-      <h2>{username}</h2>
+      <h2 >{username}</h2><p style={{marginLeft:"1rem"}}> { timeStamp}</p>
+     
     </div>
   );
 };
