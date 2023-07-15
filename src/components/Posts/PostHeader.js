@@ -1,10 +1,12 @@
 // You do not need to change any code in this file
 import React from 'react';
-
+import Post from './Post';
+import App from '../../App.js';
 const PostHeader = props => {
   // 🔥 Make sure the parent of PostHeader is passing the right props!
   // Hubi in component-ga ka sareysa midaan ay props sax ah soo direyso.
   const { thumbnailUrl, username } = props;
+   
 
   return (
     <div className='post-header'>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -19,8 +18,8 @@ const LikeSection = props => {
           {/* Add onClick function to <FontAwesomeIcon /> below and give it 'incrementLikes' function */}
           {/* Ku dar 'onClick' function <FontAwesomeIcon /> hoos ku qoran, kadibna sii 'incrementLikes'*/}
 
-        <div className='like-section-wrapper'>
-          <FontAwesomeIcon icon={faHeart} />
+        <div className='like-section-wrapper p-0'>
+          <FontAwesomeIcon icon={faHeart} onClick={incrementLikes}/>
         </div>
         <div className='like-section-wrapper'>
           <FontAwesomeIcon icon={faComment} />
@@ -30,7 +29,8 @@ const LikeSection = props => {
           {/* Change this hard coded likes to like from props */}
           {/* Hoos waxaa ku qoran 100 likes oon la badali karin, waa inaa ka dhigtaa wax la badali karo adigoo istimaalaayo 'numberOfLikes' */}
 
-      <p className='like-number'>100 likes</p>
+      {/* <p className='like-number'>{numberOfLikes-400} Likes</p> */}
+      {<p className='like-number'>{numberOfLikes} Likes</p>}
     </div>
   );
 };
@@ -38,3 +38,5 @@ const LikeSection = props => {
 export default LikeSection;
 
 // (As a stretch goal, you might want to prevent your user from "liking" the same post more than once.)
+
+ 
