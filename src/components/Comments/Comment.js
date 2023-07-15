@@ -1,6 +1,6 @@
 // You do not need to change this file.
 import React from 'react';
-
+import './Comments.css';
 const Comment = props => {
   // 🔥 Make sure the parent of Comment is passing the right props!
   // Hubi in component-ga ka sareysa midaan ay props sax ah soo direyso.
