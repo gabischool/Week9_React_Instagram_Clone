@@ -37,7 +37,7 @@ const App = () => {
     return item.username.includes(value)
     })
     setPost(result)
-  }
+  } 
 
   return (
     <div className="App">
